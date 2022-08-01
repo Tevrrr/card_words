@@ -5,15 +5,15 @@ import { FC, useState } from 'react';
 interface AsideProps {}
 
 const Aside: FC<AsideProps> = () => {
-	const [open, setOpen] = useState(false);
+	const [close, setСlose] = useState(true);
 	const toggle = () => {
-		setOpen(!open);
+		setСlose(!close);
 	};
 	return (
-		<aside className={open ? 'aside__menu close' : 'aside__menu'}>
+		<aside className={close ? 'aside__menu close' : 'aside__menu'}>
 			<ul className='w-full h-full flex flex-col gap-2 '>
 				<li className=' AsideItem'>
-					<p className=' flex justify-center items-center'>
+					<p className=' flex justify-center items-center flex-nowrap'>
 						<i className='fa-solid fa-lines-leaning'></i>CardWords
 					</p>
 					<button onClick={toggle}>
@@ -37,8 +37,12 @@ const Aside: FC<AsideProps> = () => {
 					<p>Stats</p>
 				</li>
 				<li className=' flex-grow'></li>
-				<li className='AsideItem'>
+				<li className='AsideUser'>
 					<i className='fa-solid fa-user'></i>
+					<div>
+						<p className=' text-xl font-semibold'>Name Name</p>
+						<p className=' text-base font-semibold'>Points: 25</p>
+					</div>
 				</li>
 			</ul>
 		</aside>
