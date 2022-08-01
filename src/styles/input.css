@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.aside__menu{
+    @apply bg-slate-900 w-64 p-2 text-2xl h-screen rounded-r-sm transition-all duration-300 flex flex-col items-start text-sky-50;
+}
+.aside__menu i{
+    @apply text-4xl;
+}
+.close{
+    @apply w-16;
+}
+
+
+
+.AsideItem{
+    @apply flex items-center gap-4 flex-nowrap whitespace-nowrap cursor-pointer rounded-2xl transition-all duration-300 hover:bg-slate-100 hover:bg-opacity-10
+}
+
+.AsideItem:first-child{
+    @apply bg-slate-100 bg-opacity-10 hover:bg-opacity-20 justify-between cursor-auto
+}
+
+.AsideItem.active{
+    @apply bg-slate-100 bg-opacity-20
+}
+
+
+
+.AsideItem i{
+    @apply text-3xl min-h-[3rem] min-w-[3rem] flex justify-center items-center
+}
+.aside__menu .AsideItem p{
+    @apply transition-all duration-300 opacity-100
+}
+
+.aside__menu.close .AsideItem p{
+    @apply  opacity-0 hidden
+}
+
+.aside__menu.close .AsideItem i:hover + p{
+    @apply absolute  left-20 text-slate-900  bg-slate-200 rounded-2xl px-3 py-2 opacity-90 block before:absolute before:rotate-45 before:-left-2 before:top-1/3 before:w-4 before:h-4 before:bg-slate-200
+}
+
+
